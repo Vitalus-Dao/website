@@ -17,17 +17,24 @@ export const Navbar = ({ children }) => {
             </a>
           </Link>
           <div className="text-xs mt-3 ml-1">
-            By 
+            of 
             <a href="https://metavillage.app/" target="_blank" rel="noreferrer" className="ml-1 hover:underline">
               Metavillage
             </a>
           </div>
         </div>
         <div className="flex justify-evenly gap-x-2">
-          {/* <WalletMultiButton/> */}
+          <div className="my-auto">
+            <WalletMultiButton/>
+          </div>
           <Link href="/address_book">
             <a  className="ml-2 text-sm my-auto hover:underline">
               Aderess Book
+            </a>
+          </Link>
+          <Link href="/jungle_club">
+            <a  className="ml-2 text-sm my-auto hover:underline">
+              Jungle Club
             </a>
           </Link>
           <a href="https://twitter.com/VitalusLife" target="_blank" rel="noreferrer" className="my-auto">

@@ -1,5 +1,4 @@
 import { web3 } from '@project-serum/anchor';
-import { set } from '@project-serum/anchor/dist/cjs/utils/features';
 import { useConnection, useWallet, useAnchorWallet } from '@solana/wallet-adapter-react';
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
