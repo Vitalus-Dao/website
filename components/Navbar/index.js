@@ -29,7 +29,7 @@ export const Navbar = ({ children }) => {
           </div>
           <Link href="/address_book">
             <a  className="ml-2 text-sm my-auto hover:underline">
-              Aderess Book
+              Address Book
             </a>
           </Link>
           <Link href="/jungle_club">
