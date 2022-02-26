@@ -1,8 +1,9 @@
 import { Navbar } from '../components/Navbar'
 import { Wallet } from '../components/Wallet'
 import Image from 'next/image';
+import { FC } from 'react';
 
-const Home = () => {
+const Home: FC = () => {
   return (
     <>
       <Wallet>

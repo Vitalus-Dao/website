@@ -4,18 +4,19 @@ import Image from "next/image";
 import {
   WalletMultiButton
 } from '@solana/wallet-adapter-react-ui';
+import { FC } from "react";
 
-export const Navbar = ({ children }) => {
+export const Navbar: FC = () => {
 
   return (
     <>
       <nav className="flex justify-between h-16">
         <div className="my-auto flex">
-          <Link href="/">
-            <a  className="ml-2 font-mono text-2xl hover:underline">
+          {/* <Link href="/"> */}
+            <a href="/" className="ml-2 font-mono text-2xl hover:underline">
               Vitalus
             </a>
-          </Link>
+          {/* </Link> */}
           <div className="text-xs mt-3 ml-1">
             of 
             <a href="https://metavillage.app/" target="_blank" rel="noreferrer" className="ml-1 hover:underline">
@@ -27,16 +28,16 @@ export const Navbar = ({ children }) => {
           <div className="my-auto">
             <WalletMultiButton/>
           </div>
-          <Link href="/address_book">
-            <a  className="ml-2 text-sm my-auto hover:underline">
+          {/* <Link href="/address_book"> */}
+            <a href="/address_book" className="ml-2 text-sm my-auto hover:underline">
               Aderess Book
             </a>
-          </Link>
-          <Link href="/jungle_club">
-            <a  className="ml-2 text-sm my-auto hover:underline">
+          {/* </Link> */}
+          {/* <Link href="/jungle_club"> */}
+            <a href="/jungle_club" className="ml-2 text-sm my-auto hover:underline">
               Jungle Club
             </a>
-          </Link>
+          {/* </Link> */}
           <a href="https://twitter.com/VitalusLife" target="_blank" rel="noreferrer" className="my-auto">
             <Image src="/imgs/twitter-logo.svg" width={50} height={50} />
           </a>

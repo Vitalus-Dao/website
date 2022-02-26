@@ -2,7 +2,8 @@ import { Navbar } from '../../../../components/Navbar';
 import { useRouter } from 'next/router';
 import { Wallet } from '../../../../components/Wallet';
 import { Address } from '../../../../components/Address';
-import { VITALUS_ARWEAVE_LINK } from '../../../../helpers/helpers';
+import { VillaData, VITALUS_ARWEAVE_LINK } from '../../../../helpers/helpers';
+import { FC } from 'react';
 
 export const getStaticPaths = async () => {
   const res = await fetch(VITALUS_ARWEAVE_LINK);
@@ -50,7 +51,7 @@ export const getStaticProps = async (context) => {
   }
 }
 
-const AddressShell = ({ data }) => {
+const AddressShell: FC<{ data: VillaData }> = ({ data }) => {
   // const router = useRouter(); 
 
   return (

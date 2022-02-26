@@ -1,10 +1,10 @@
 import { web3 } from '@project-serum/anchor';
 import { useConnection, useWallet, useAnchorWallet } from '@solana/wallet-adapter-react';
 import Image from 'next/image';
-import { useState, useEffect } from 'react';
-import { titlize } from '../../helpers/helpers';
+import { useState, useEffect, FC } from 'react';
+import { titlize, VillaData } from '../../helpers/helpers';
 
-export const Address = ({ data }) => {
+export const Address: FC<{ data: VillaData }> = ({ data }) => {
   const { connection } = useConnection();
   const [imgSrc, setImgSrc] = useState("/imgs/missing.jpg");
   const [owner, setOwner] = useState("");
@@ -16,8 +16,12 @@ export const Address = ({ data }) => {
     const info = await connection.getParsedAccountInfo(tokenAcnts.value[0].address);
 
     // console.log(info.value.owner.toString())
-    return info.value.data.parsed.info.owner;
+    return info.value.data.parsed.info.owner as string;
   }
+
+  // const claimAddress = () => {
+
+  // }
 
   useEffect(() => {
     fetch(data.metadata.image)
@@ -34,8 +38,13 @@ export const Address = ({ data }) => {
   return (
     <div className="flex justify-center">
       <div className="max-w-4xl">
-        <div className="mt-8 font-bold text-2xl">
-          {data.metadata.name}
+        <div className="mt-8 flex justify-between ">
+          <div className="font-bold text-2xl">
+            {data.metadata.name}
+          </div>
+          {/* <button onClick={claimAddress}>
+            Claim
+          </button> */}
         </div>
         <div className="mt-4 flex justify-center">
           <Image src={imgSrc} width={400} height={400} />

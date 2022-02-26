@@ -1,5 +1,5 @@
 import { web3 } from '@project-serum/anchor';
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, FC } from 'react';
 import { useConnection, useWallet, useAnchorWallet } from '@solana/wallet-adapter-react';
 import { Metadata, MetadataProgram } from "@metaplex-foundation/mpl-token-metadata";
 import {
@@ -8,10 +8,23 @@ import {
 import { PublicKey } from '@solana/web3.js';
 // import 'dotenv/config';
 
-export const JungleClub = () => {
+export const JungleClub: FC = () => {
   const [villas, setVillas] = useState([]);
   const { connection } = useConnection();
   const { publicKey } = useWallet();
+
+  // const play = async () => {
+  //   const res = await fetch("https://api-mainnet.magiceden.dev/v2/collections/metavillage/listings?offset=0&limit=20");
+  //   const data = await res.json();
+
+  //   const res1 = await fetch("https://api-mainnet.magiceden.dev/v2/collections/metavillage/activities?offset=0&limit=20");
+  //   const data1 = await res1.json();
+
+  //   const res2 = await fetch("https://api-mainnet.magiceden.dev/v2/collections/metavillage/stats");
+  //   const data2 = await res2.json();
+
+  //   console.log(data,data1, data2);
+  // }
 
   const getVillas = useCallback(async () => {
     let tokenAccounts = await connection.getParsedTokenAccountsByOwner(
@@ -37,8 +50,10 @@ export const JungleClub = () => {
       try {
         let metadata = await Metadata.load(connection, mtdtAcnt);
         // nfts.push(metadata);
-        acc['metadata'] = metadata;
-        return acc;
+        return {
+          ...acc, 
+          metadata: metadata 
+        }
       } catch(e) {
         return null;
       }
@@ -49,7 +64,7 @@ export const JungleClub = () => {
       return item && item.metadata.data.data.creators[0].address === process.env.VITALUS_CANDY_MACHINE;
     });
 
-    console.log(villas);
+    // console.log(villas);
     return villas;
   }, [connection, publicKey]);
 
@@ -77,6 +92,7 @@ export const JungleClub = () => {
       { publicKey && villas[0] &&
         <div>
           *Private content for holders only ;)*
+          {/* <button onClick={play}>yo</button> */}
         </div>
       }
     </>

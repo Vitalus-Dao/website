@@ -43,18 +43,18 @@ const District = ({ data }) => {
         <Navbar />
         <div className="max-w-4xl">
           <div className="mt-4 ml-2 font-bold text-xl">
-            {titlize(router.query.district)}
+            {titlize(router.query.district as string)}
           </div>
           <div className="mt-2">
             {Object.keys(data).map((block) => {
               return (
-                <Link href={`/address_book/${router.query.district}/${block}`} key={block}>
-                  <a>
+                /* <Link href={`/address_book/${router.query.district}/${block}`} key={block}> */
+                  <a href={`/address_book/${router.query.district}/${block}`} key={block}>
                     <div className="ml-2 hover:bg-gray-100">
                       {titlize(block)}
                     </div>
                   </a>
-                </Link>
+                /* </Link> */
               )
             })}
           </div>

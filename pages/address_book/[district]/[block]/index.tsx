@@ -3,7 +3,8 @@ import { Navbar } from '../../../../components/Navbar';
 import { useRouter } from 'next/router';
 import { Wallet } from '../../../../components/Wallet';
 import { AddressLink } from '../../../../components/AddressLink';
-import { titlize, VITALUS_ARWEAVE_LINK } from '../../../../helpers/helpers';
+import { titlize, VillaData, VITALUS_ARWEAVE_LINK } from '../../../../helpers/helpers';
+import { FC } from 'react';
 
 export const getStaticPaths = async () => {
   const res = await fetch(VITALUS_ARWEAVE_LINK);
@@ -47,10 +48,11 @@ const Block = ({ data }) => {
         <Navbar />
         <div className="max-w-4xl">
           <div className="mt-4 ml-2 font-bold text-xl">
-            {titlize(router.query.block)}
+            {titlize(router.query.block as string)}
           </div>
           <div> 
             {Object.keys(data).map((k) => {
+              let d = data[k]
               return (
                 <AddressLink data={data[k]} idx={k} key={k} />
               )
