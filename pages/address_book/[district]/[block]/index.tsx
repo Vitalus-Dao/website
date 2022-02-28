@@ -1,20 +1,20 @@
-import { Navbar } from '../../../../components/Navbar';
+import { Navbar } from '@components/Navbar';
 // import metadata from '../../../../data/nakamota-metadata.json';
 import { useRouter } from 'next/router';
-import { Wallet } from '../../../../components/Wallet';
-import { AddressLink } from '../../../../components/AddressLink';
-import { titlize, VillaData, VITALUS_ARWEAVE_LINK } from '../../../../helpers/helpers';
-import { FC } from 'react';
+import { Wallet } from '@components/Wallet';
+import { AddressLink } from '@components/AddressLink';
+import { titlize } from '@helpers/mixins';
+import { VITALUS_ARWEAVE_LINK } from '@helpers/constants';
 
 export const getStaticPaths = async () => {
   const res = await fetch(VITALUS_ARWEAVE_LINK);
   const metadata = await res.json();
-  let paths = [];
-  
+  const paths = [];
+
   Object.keys(metadata).forEach((district) => {
     Object.keys(metadata[district]).forEach((block) => {
       paths.push({
-        params: { block: block, district: district }
+        params: { block: block, district: district },
       });
     });
   });
@@ -22,8 +22,8 @@ export const getStaticPaths = async () => {
   return {
     paths: paths,
     fallback: false,
-  }
-}
+  };
+};
 
 export const getStaticProps = async (context) => {
   const res = await fetch(VITALUS_ARWEAVE_LINK);
@@ -33,13 +33,13 @@ export const getStaticProps = async (context) => {
   const district = context.params.district;
 
   return {
-    props: { 
+    props: {
       data: metadata[district][block],
-     }
-  }
-}
+    },
+  };
+};
 
-const Block = ({ data }) => {
+const Block = ({ data }): JSX.Element => {
   const router = useRouter();
 
   return (
@@ -50,18 +50,16 @@ const Block = ({ data }) => {
           <div className="mt-4 ml-2 font-bold text-xl">
             {titlize(router.query.block as string)}
           </div>
-          <div> 
+          <div>
             {Object.keys(data).map((k) => {
-              let d = data[k]
-              return (
-                <AddressLink data={data[k]} idx={k} key={k} />
-              )
+              const d = data[k];
+              return <AddressLink data={data[k]} idx={k} key={k} />;
             })}
           </div>
         </div>
       </Wallet>
     </>
-  )
-}
+  );
+};
 
 export default Block;
