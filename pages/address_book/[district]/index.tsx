@@ -1,9 +1,10 @@
 // import metadata from '../../../data/nakamota-metadata.json';
-import { Navbar } from '../../../components/Navbar';
+import { Navbar } from '@components/Navbar';
 import { useRouter } from 'next/router';
-import { Wallet } from '../../../components/Wallet';
-import { titlize, VITALUS_ARWEAVE_LINK } from '../../../helpers/helpers';
+import { Wallet } from '@components/Wallet';
 import Link from 'next/link';
+import { VITALUS_ARWEAVE_LINK } from '@helpers/constants';
+import { titlize } from '@helpers/mixins';
 
 export const getStaticPaths = async () => {
   const res = await fetch(VITALUS_ARWEAVE_LINK);
@@ -11,15 +12,15 @@ export const getStaticPaths = async () => {
 
   const paths = Object.keys(metadata).map((district) => {
     return {
-      params: { district: district }
-    }
+      params: { district: district },
+    };
   });
 
   return {
     paths: paths,
     fallback: false,
-  }
-}
+  };
+};
 
 export const getStaticProps = async (context) => {
   const res = await fetch(VITALUS_ARWEAVE_LINK);
@@ -27,12 +28,12 @@ export const getStaticProps = async (context) => {
   const district = context.params.district;
 
   return {
-    props: { 
+    props: {
       data: metadata[district],
       // district: district,
-     }
-  }
-}
+    },
+  };
+};
 
 const District = ({ data }) => {
   const router = useRouter();
@@ -49,19 +50,17 @@ const District = ({ data }) => {
             {Object.keys(data).map((block) => {
               return (
                 /* <Link href={`/address_book/${router.query.district}/${block}`} key={block}> */
-                  <a href={`/address_book/${router.query.district}/${block}`} key={block}>
-                    <div className="ml-2 hover:bg-gray-100">
-                      {titlize(block)}
-                    </div>
-                  </a>
+                <a href={`/address_book/${router.query.district}/${block}`} key={block}>
+                  <div className="ml-2 hover:bg-gray-100">{titlize(block)}</div>
+                </a>
                 /* </Link> */
-              )
+              );
             })}
           </div>
         </div>
       </Wallet>
     </>
-  )
-}
+  );
+};
 
 export default District;
