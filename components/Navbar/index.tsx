@@ -92,6 +92,11 @@ export const Navbar: FC = () => {
                   Jungle Club
                 </a>
               </li>
+              <li className="p-4 md:p-0">
+                <a href="/partnerships" className="ml-2 my-auto hover:text-green-500">
+                  Partnerships
+                </a>
+              </li>
             </ul>
           </div>
         </div>
