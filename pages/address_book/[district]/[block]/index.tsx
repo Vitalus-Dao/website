@@ -46,7 +46,7 @@ const Block = ({ data }): JSX.Element => {
     <>
       <Wallet>
         <Navbar />
-        <div className="max-w-4xl">
+        <div className="container mx-auto">
           <div className="mt-4 ml-2 font-bold text-xl">
             {titlize(router.query.block as string)}
           </div>

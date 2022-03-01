@@ -42,7 +42,7 @@ const District = ({ data }) => {
     <>
       <Wallet>
         <Navbar />
-        <div className="max-w-4xl">
+        <div className="container mx-auto">
           <div className="mt-4 ml-2 font-bold text-xl">
             {titlize(router.query.district as string)}
           </div>
@@ -51,7 +51,9 @@ const District = ({ data }) => {
               return (
                 /* <Link href={`/address_book/${router.query.district}/${block}`} key={block}> */
                 <a href={`/address_book/${router.query.district}/${block}`} key={block}>
-                  <div className="ml-2 hover:bg-gray-100">{titlize(block)}</div>
+                  <div className="ml-2 p-2 hover:bg-gray-100 dark:hover:bg-gray-800">
+                    {titlize(block)}
+                  </div>
                 </a>
                 /* </Link> */
               );

@@ -74,18 +74,20 @@ export const Address: FC<{ data: VillaData }> = ({ data }) => {
           <div className="flex justify-center">
             <div className="max-w-3xl">
               <div className="font-semibold text-lg">Description</div>
-              <div className="mt-2">{data.metadata.description}</div>
+              <div className="mt-2 dark:text-slate-300">{data.metadata.description}</div>
             </div>
           </div>
         </div>
         <div className="max-w-3xl mt-4">
           <div className="font-semibold text-lg">Attributes</div>
-          <div className="grid grid-cols-2 mt-2">
+          <div className="grid grid-cols-2 mt-2 ">
             {Object.keys(data.metadata.attributes).map((attr) => {
               return (
                 <div className="flex" key={attr}>
                   <p className="font-semibold">{titlize(attr)}:</p>{' '}
-                  <p className="ml-2">{titlize(data.metadata.attributes[attr])}</p>
+                  <p className="ml-2 dark:text-slate-300">
+                    {titlize(data.metadata.attributes[attr])}
+                  </p>
                 </div>
               );
             })}
