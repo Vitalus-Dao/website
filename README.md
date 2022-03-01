@@ -18,7 +18,7 @@ Different helper functions and constants
 - `types` (_Import_: `from "@types";`)\
 Type definitions and models used as component properties or for api
 
-## Contribution Guid
+## Contribution Guide
 
 ### Code Style
 We use style guidelines from airbnb.
