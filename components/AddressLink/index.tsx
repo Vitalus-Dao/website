@@ -20,7 +20,7 @@ export const AddressLink: FC<{ data: VillaData; idx: string }> = ({ data, idx })
   return (
     // <Link href={`/address_book/${router.query.district}/${router.query.block}/${idx}`}>
     <a href={`/address_book/${router.query.district}/${router.query.block}/${idx}`}>
-      <div className="flex my-2 hover:bg-gray-100">
+      <div className="flex my-2 hover:bg-gray-100 dark:hover:bg-gray-800">
         <div className="ml-2">
           <Image src={imgSrc} width={50} height={50} alt={'Villa address link image'} />
         </div>
