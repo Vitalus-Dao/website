@@ -7,6 +7,7 @@ import { faDiscord, faTwitter } from '@fortawesome/free-brands-svg-icons';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { FC } from 'react';
 import {Logo} from "@components/Logo";
+import { NavList } from '@components/NavList';
 
 export const Navbar: FC = () => {
   function doToggleMenu() {
@@ -75,24 +76,8 @@ export const Navbar: FC = () => {
               <FontAwesomeIcon icon={faBars} size={'2x'} />
             </button>
           </div>
-          <div
-            className="text-slate-900 dark:text-white justify-between w-full hidden md:flex md:w-auto md:items-center md:order-1"
-            id="mobile-menu">
-            <ul className="flex flex-col md:flex-row mt-4 md:space-x-8 md:mt-0 md:text-sm md:font-medium">
-              {/* <Link href="/address_book"> */}
-              <li className="p-4 md:p-0">
-                <a href="/address_book" className="ml-2 my-auto hover:text-green-500">
-                  Address Book
-                </a>
-              </li>
-              {/* </Link> */}
-              {/* <Link href="/jungle_club"> */}
-              <li className="p-4 md:p-0">
-                <a href="/jungle_club" className="ml-2 my-auto hover:text-green-500">
-                  Jungle Club
-                </a>
-              </li>
-            </ul>
+          <div className="text-slate-900 dark:text-white justify-between w-full hidden md:flex md:w-auto md:items-center md:order-1" id="mobile-menu">
+            <NavList />
           </div>
         </div>
       </nav>

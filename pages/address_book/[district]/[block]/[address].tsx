@@ -5,6 +5,7 @@ import { Address } from '@components/Address';
 import { FC } from 'react';
 import { VITALUS_ARWEAVE_LINK } from '@helpers/constants';
 import { VillaData } from '@types';
+import { Page } from '@components/Page';
 
 export const getStaticPaths = async () => {
   const res = await fetch(VITALUS_ARWEAVE_LINK);
@@ -56,12 +57,9 @@ const AddressShell: FC<{ data: VillaData }> = ({ data }) => {
   // const router = useRouter();
 
   return (
-    <>
-      <Wallet>
-        <Navbar />
-        <Address data={data} />
-      </Wallet>
-    </>
+    <Page>
+      <Address data={data} />
+    </Page>
   );
 };
 

@@ -98,5 +98,3 @@ export const Address: FC<{ data: VillaData }> = ({ data }) => {
     </div>
   );
 };
-
-// export default Address;
