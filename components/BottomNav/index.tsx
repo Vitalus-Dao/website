@@ -7,7 +7,7 @@ import { faTwitter, faInstagram, faDiscord } from "@fortawesome/free-brands-svg-
 export const BottomNav: FC = () => {
 
   return (
-    <div className="w-full bg-cover bg-gray-900 mt-4 flex justify-between static bottom-0">
+    <div className="w-full bg-cover bg-gray-900 mt-16 flex justify-between static bottom-0">
       <div className="pt-4 pb-6 pl-2">
         <NavList row={true}>
           <NavLink
