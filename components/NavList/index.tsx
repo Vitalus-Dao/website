@@ -2,11 +2,11 @@ import { NavLink } from "@components/NavLink";
 import { FC } from "react";
 
 
-export const NavList: FC = ({ children }) => {
+export const NavList: FC<{ row: boolean }> = ({ children, row }) => {
 
 
   return (
-    <ul className="flex flex-col md:flex-row mt-4 md:space-x-8 md:mt-0 md:text-sm md:font-medium">
+    <ul className={"flex flex-col mt-4 ml-2 md:mt-0 md:text-sm md:font-medium".concat(row ? " md:flex-row md:space-x-8" : "")}>
       <NavLink
         name={"Address Book"}
         link={"address_book"}

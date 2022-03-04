@@ -76,17 +76,19 @@ export const JungleClub: FC = () => {
   }, [getVillas, publicKey]);
 
   return (
-    <>
+    <div>
+      <div className="font-bold text-xl">
+        This page is currently under construction!
+      </div>
       {!publicKey && <div>Please connect wallet</div>}
       {publicKey && !villas[0] && (
         <div>Seems that you do not have a Vitalus villa :/</div>
       )}
       {publicKey && villas[0] && (
         <div>
-          *Private content for holders only ;)*
-          {/* <button onClick={play}>yo</button> */}
+          Here you will see private info only for Vitalus holders
         </div>
       )}
-    </>
+    </div>
   );
 };

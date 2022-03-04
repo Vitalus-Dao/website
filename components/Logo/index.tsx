@@ -2,7 +2,7 @@ export interface ILogoProps {
   height?: number;
 }
 
-export const Logo = ({ height = 40 }: ILogoProps) => {
+export const Logo = ({ height = 30 }: ILogoProps) => {
   return (
     <svg
       style={{ height }}

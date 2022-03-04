@@ -110,12 +110,22 @@ const Home: FC = () => {
           partnership & networking, event planning, merchandising, and more!
         </div>
       </div>
-      <div>
-        <TeamProfile 
-          name="nibbus"
-          role="Dev Lead"
-          imgSrc="/imgs/profiles/nibbus.png"
-        />
+      <div className="mt-4">
+        <div className="text-center font-bold text-lg">
+          Vitalus Contributors
+        </div>
+        <div className="flex space-x-2">
+          <TeamProfile 
+            name="nibbus"
+            role="Dev Lead"
+            imgSrc="/imgs/profiles/nibbus.png"
+          />
+          <TeamProfile 
+            name="DSamuraiM"
+            role="Advisory Mod"
+            imgSrc="/imgs/profiles/dsm.jpg"
+          />
+        </div>
       </div>
     </Page>
   );
