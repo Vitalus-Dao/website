@@ -7,7 +7,7 @@ import Image from 'next/image';
 import { FC } from 'react';
 
 const Home: FC = () => {
-  const villaSize = 500;
+  const villaSize = 450;
 
   return (
     <Page>
@@ -75,7 +75,7 @@ const Home: FC = () => {
             more about you and projects you have participated in via your Villa Page.
           </div>
           <div className="mt-4">
-            Key features of owning a Villa: 
+            Owning a Villa will alow you to: 
             <ul>
               <li>- Display your NFT collection in your Villa Art Gallery</li>
               <li>- Link to your Metaverse homes. Let people jump in your Sandbox, Decentraland, Portal, and other homes</li>
@@ -86,45 +86,81 @@ const Home: FC = () => {
           </div>
         </div>
       </div>
-      <div className="text-center mt-4">
-        Other Key Features the Vitalus Community is Workin on:
-        <div>
-          <div className="font-bold">Vitalus City Hall</div>
-          Vitalus City Hall is an exclusive member club for our beloved Vitalians! 
-          You will be enjoying collab social events and meet different people here 
-          from other legit NFT projects!
-        </div>
-        <div>
-          <div className="font-bold">VitalusDao</div>
-          VitalusDAO aims at building a strong sense of belongings and collective 
-          ownership via community governance, incentivising Vitalians and exclusive 
-          access to VitalusDAO related activities/ events 
-        </div>
-        <div>
-          <div className="font-bold">Vitalus Council</div>
-          Vitalus Council is a conceptual way to describe the Vitalus-Round-Table.  
-          Adhere to our vision of "Community governance governed by the community", 
-          we are dedicated to utilise every talent of our Vitalians. Every Vitalian 
-          are welcome to volunteer for any kind of works needed for Vitalus development 
-          such as managing social media accounts, digital design, engineering, 
-          partnership & networking, event planning, merchandising, and more!
+      <div className="mt-4 flex justify-center">
+        <div className="w-2/3">
+          <div className="font-bold text-xl">
+            Other Key Features the Vitalus Community is Working on:
+          </div>
+          <div className="mt-2">
+            <div className="font-bold">Vitalus City Hall</div>
+            Vitalus City Hall is an exclusive member club for our beloved Vitalians! 
+            You will be enjoying collab social events and meet different people here 
+            from other legit NFT projects!
+          </div>
+          <div className="mt-2">
+            <div className="font-bold">VitalusDao</div>
+            VitalusDAO aims at building a strong sense of belongings and collective 
+            ownership via community governance, incentivising Vitalians and exclusive 
+            access to VitalusDAO related activities/ events 
+          </div>
+          <div className="mt-2">
+            <div className="font-bold">Vitalus Council</div>
+            Vitalus Council is a conceptual way to describe the Vitalus-Round-Table.  
+            Adhere to our vision of "Community governance governed by the community", 
+            we are dedicated to utilise every talent of our Vitalians. Every Vitalian 
+            are welcome to volunteer for any kind of works needed for Vitalus development 
+            such as managing social media accounts, digital design, engineering, 
+            partnership & networking, event planning, merchandising, and more!
+          </div>
         </div>
       </div>
-      <div className="mt-4">
-        <div className="text-center font-bold text-lg">
-          Vitalus Contributors
-        </div>
-        <div className="flex space-x-2">
-          <TeamProfile 
-            name="nibbus"
-            role="Dev Lead"
-            imgSrc="/imgs/profiles/nibbus.png"
-          />
-          <TeamProfile 
-            name="DSamuraiM"
-            role="Advisory Mod"
-            imgSrc="/imgs/profiles/dsm.jpg"
-          />
+      <div className="mt-4 flex justify-center">
+        <div className="w-2/3">
+          <div className="text-center font-bold text-lg">
+            Vitalus Contributors
+          </div>
+          <div className="mt-2 grid grid-cols-4 gap-y-4 justify-items-center">
+            <TeamProfile 
+              name="SOL"
+              role="Vitalus Lead"
+              imgSrc="/imgs/profiles/sol.png"
+            />
+            <TeamProfile 
+              name="nibbus"
+              role="Dev Lead"
+              imgSrc="/imgs/profiles/nibbus.png"
+            />
+            <TeamProfile 
+              name="DSamuraiM"
+              role="Advisory Mod"
+              imgSrc="/imgs/profiles/dsm.jpg"
+            />
+            <TeamProfile 
+              name="Drayke"
+              role="Developer"
+              imgSrc="/imgs/profiles/Drayke.png"
+            />
+            <TeamProfile 
+              name="Cadevon"
+              role="Vitalus Sage"
+              imgSrc="/imgs/profiles/cadevon.png"
+            />
+            <TeamProfile 
+              name="Apoc"
+              role="Mod"
+              imgSrc="/imgs/missing.jpg"
+            />
+            <TeamProfile 
+              name="Wetiko"
+              role="Media Mod"
+              imgSrc="/imgs/missing.jpg"
+            />
+            <TeamProfile 
+              name="mf777"
+              role="Developer"
+              imgSrc="/imgs/missing.jpg"
+            />
+          </div>
         </div>
       </div>
     </Page>
