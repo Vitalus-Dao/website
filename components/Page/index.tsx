@@ -3,7 +3,6 @@ import { Navbar } from "@components/Navbar";
 import { Wallet } from "@components/Wallet";
 import { FC } from "react";
 
-
 export const Page: FC = ({ children })=> {
 
   return (

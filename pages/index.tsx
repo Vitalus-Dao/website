@@ -1,8 +1,5 @@
-import { BottomNav } from '@components/BottomNav';
-import { Navbar } from '@components/Navbar';
 import { Page } from '@components/Page';
 import { TeamProfile } from '@components/TeamProfile';
-import { Wallet } from '@components/Wallet';
 import Image from 'next/image';
 import { FC } from 'react';
 

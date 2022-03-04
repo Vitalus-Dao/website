@@ -1,7 +1,6 @@
 import { useState, useEffect, FC } from 'react';
 import { useRouter } from 'next/router';
 import Image from 'next/image';
-import Link from 'next/link';
 import { VillaData } from '@types';
 
 export const AddressLink: FC<{ data: VillaData; idx: string }> = ({ data, idx }) => {
