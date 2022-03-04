@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { useState, useEffect, FC } from 'react';
 import { VillaData } from '@types';
 import { titlize } from '@helpers/mixins';
+import { ParsedAccountData } from '@solana/web3.js';
 
 export const Address: FC<{ data: VillaData }> = ({ data }) => {
   const { connection } = useConnection();
@@ -17,7 +18,7 @@ export const Address: FC<{ data: VillaData }> = ({ data }) => {
     const info = await connection.getParsedAccountInfo(tokenAcnts.value[0].address);
 
     // console.log(info.value.owner.toString())
-    return info.value.data.parsed.info.owner as string;
+    return (info.value.data as ParsedAccountData).parsed.info.owner as string;
   };
 
   // const claimAddress = () => {
