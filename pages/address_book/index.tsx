@@ -1,5 +1,6 @@
 // import mtdt from '../../data/nakamota-metadata.json';
 import { Navbar } from '@components/Navbar';
+import { Page } from '@components/Page';
 import { Wallet } from '@components/Wallet';
 import { VITALUS_ARWEAVE_LINK } from '@helpers/constants';
 import { titlize } from '@helpers/mixins';
@@ -16,8 +17,7 @@ export const getStaticProps = async () => {
 
 function AddressBook({ metadata }) {
   return (
-    <Wallet>
-      <Navbar />
+    <Page>
       <div className="container mx-auto">
         <div className="mt-4 ml-2 font-bold text-xl">District</div>
         <div className="mt-2 ml-2">
@@ -32,8 +32,8 @@ function AddressBook({ metadata }) {
           ))}
         </div>
       </div>
-    </Wallet>
+    </Page>
   );
-}
+};
 
 export default AddressBook;

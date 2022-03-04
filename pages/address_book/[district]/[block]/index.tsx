@@ -5,6 +5,7 @@ import { Wallet } from '@components/Wallet';
 import { AddressLink } from '@components/AddressLink';
 import { titlize } from '@helpers/mixins';
 import { VITALUS_ARWEAVE_LINK } from '@helpers/constants';
+import { Page } from '@components/Page';
 
 export const getStaticPaths = async () => {
   const res = await fetch(VITALUS_ARWEAVE_LINK);
@@ -43,22 +44,19 @@ const Block = ({ data }): JSX.Element => {
   const router = useRouter();
 
   return (
-    <>
-      <Wallet>
-        <Navbar />
-        <div className="container mx-auto">
-          <div className="mt-4 ml-2 font-bold text-xl">
-            {titlize(router.query.block as string)}
-          </div>
-          <div>
-            {Object.keys(data).map((k) => {
-              const d = data[k];
-              return <AddressLink data={data[k]} idx={k} key={k} />;
-            })}
-          </div>
+    <Page>
+      <div className="container mx-auto">
+        <div className="mt-4 ml-2 font-bold text-xl">
+          {titlize(router.query.block as string)}
         </div>
-      </Wallet>
-    </>
+        <div>
+          {Object.keys(data).map((k) => {
+            const d = data[k];
+            return <AddressLink data={data[k]} idx={k} key={k} />;
+          })}
+        </div>
+      </div>
+    </Page>
   );
 };
 
