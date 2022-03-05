@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDiscord, faTwitter } from '@fortawesome/free-brands-svg-icons';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { FC } from 'react';
-import {Logo} from "@components/Logo";
+import { Logo } from '@components/Logo';
 import { NavList } from '@components/NavList';
 
 export const Navbar: FC = () => {
@@ -39,7 +39,9 @@ export const Navbar: FC = () => {
             <FontAwesomeIcon icon={faBars} size={'2x'} />
           </button>
         </div>
-        <div className="text-slate-900 dark:text-white justify-between w-full hidden" id="mobile-menu">
+        <div
+          className="text-slate-900 dark:text-white justify-between w-full hidden"
+          id="mobile-menu">
           <NavList row={false} />
         </div>
       </div>

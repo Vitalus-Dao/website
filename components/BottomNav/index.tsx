@@ -1,19 +1,15 @@
-import { NavLink } from "@components/NavLink";
-import { NavList } from "@components/NavList";
-import { FC } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTwitter, faInstagram, faDiscord } from "@fortawesome/free-brands-svg-icons";
+import { NavLink } from '@components/NavLink';
+import { NavList } from '@components/NavList';
+import { FC } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTwitter, faInstagram, faDiscord } from '@fortawesome/free-brands-svg-icons';
 
 export const BottomNav: FC = () => {
-
   return (
     <div className="w-full bg-cover bg-gray-900 mt-16 flex justify-between static bottom-0">
       <div className="pt-4 pb-6 pl-2">
         <NavList row={true}>
-          <NavLink
-            name="Metavillage"
-            link="https://metavillage.app/"
-          />
+          <NavLink name="Metavillage" link="https://metavillage.app/" />
         </NavList>
       </div>
       <div className="pt-4 pr-4 space-x-4">

@@ -34,6 +34,6 @@ function AddressBook({ metadata }) {
       </div>
     </Page>
   );
-};
+}
 
 export default AddressBook;
