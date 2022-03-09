@@ -1,7 +1,4 @@
-import { Navbar } from '@components/Navbar';
-// import metadata from '../../../../data/nakamota-metadata.json';
 import { useRouter } from 'next/router';
-import { Wallet } from '@components/Wallet';
 import { AddressLink } from '@components/AddressLink';
 import { titlize } from '@helpers/mixins';
 import { VITALUS_ARWEAVE_LINK } from '@helpers/constants';

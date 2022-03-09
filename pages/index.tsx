@@ -1,14 +1,11 @@
-import { BottomNav } from '@components/BottomNav';
-import { Navbar } from '@components/Navbar';
 import { Page } from '@components/Page';
 import { TeamProfile } from '@components/TeamProfile';
-import { Card } from '@components/Card';
-import { Wallet } from '@components/Wallet';
 import Image from 'next/image';
 import { FC, useEffect, useState } from 'react';
 import { Logo } from '@components/Logo';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDiscord, faInstagram, faTwitter } from '@fortawesome/free-brands-svg-icons';
+import { Card } from '@components/Card';
 // import { Swiper, SwiperSlide } from 'swiper/';
 // import { Navigation } from 'swiper';
 

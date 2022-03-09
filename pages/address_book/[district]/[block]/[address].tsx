@@ -1,6 +1,3 @@
-import { Navbar } from '@components/Navbar';
-import { useRouter } from 'next/router';
-import { Wallet } from '@components/Wallet';
 import { Address } from '@components/Address';
 import { FC } from 'react';
 import { VITALUS_ARWEAVE_LINK } from '@helpers/constants';

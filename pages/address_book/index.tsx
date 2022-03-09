@@ -1,10 +1,6 @@
-// import mtdt from '../../data/nakamota-metadata.json';
-import { Navbar } from '@components/Navbar';
 import { Page } from '@components/Page';
-import { Wallet } from '@components/Wallet';
 import { VITALUS_ARWEAVE_LINK } from '@helpers/constants';
 import { titlize } from '@helpers/mixins';
-import Link from 'next/link';
 
 export const getStaticProps = async () => {
   const res = await fetch(VITALUS_ARWEAVE_LINK);
