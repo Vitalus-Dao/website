@@ -12,28 +12,33 @@ export const Navbar: FC = () => {
   }
 
   const handleScroll = () => {
-    if(window.scrollY > 10){
-      document.querySelector("#nav").className = "fixed top-0 z-20 w-full border-b-gray-200 py-2 dark:bg-dark-2";
-      document.querySelector("#walletBtn").className = "md:block";
-      document.querySelector("#logo").className = "my-auto md:flex text-slate-900 dark:text-white";
-
+    if (window.scrollY > 10) {
+      document.querySelector('#nav').className =
+        'fixed top-0 z-20 w-full border-b-gray-200 py-2 dark:bg-dark-2';
+      document.querySelector('#walletBtn').className = 'md:block';
+      document.querySelector('#logo').className =
+        'my-auto md:flex text-slate-900 dark:text-white';
     } else {
-      document.querySelector("#logo").className = "invisible my-auto md:flex text-slate-900 dark:text-white";
-      document.querySelector("#walletBtn").className = "invisible";
-      document.querySelector("#nav").className = "fixed top-0 z-20 w-full border-b-gray-200 py-2"
+      document.querySelector('#logo').className =
+        'invisible my-auto md:flex text-slate-900 dark:text-white';
+      document.querySelector('#walletBtn').className = 'invisible';
+      document.querySelector('#nav').className =
+        'fixed top-0 z-20 w-full border-b-gray-200 py-2';
     }
-  }
+  };
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll);
   }, [handleScroll]);
 
   return (
     <nav id="nav" className="fixed top-0 z-50 w-full border-b-gray-200 py-2">
       <div className="w-full container mx-auto flex flex-wrap justify-between ">
-        <div id="logo" className="invisible my-auto md:flex text-slate-900 dark:text-white">
+        <div
+          id="logo"
+          className="invisible my-auto md:flex text-slate-900 dark:text-white">
           {/* <Link href="/"> */}
           <a href="/" className="ml-2 font-mono text-2xl">
-            <Logo height={30}/>
+            <Logo height={30} />
           </a>
         </div>
         <div className="flex pr-2 space-x-4">
