@@ -11,7 +11,7 @@ export const getStaticPaths = async () => {
 
   Object.keys(metadata).forEach((district) => {
     Object.keys(metadata[district]).forEach((block) => {
-      Object.keys(metadata[district][block]).forEach((num, idx) => {
+      Object.keys(metadata[district][block]).forEach((num) => {
         // let i = addr.metadata.name.indexOf(" ");
         paths.push({
           params: {

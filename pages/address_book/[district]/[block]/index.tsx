@@ -48,7 +48,6 @@ const Block = ({ data }): JSX.Element => {
         </div>
         <div>
           {Object.keys(data).map((k) => {
-            const d = data[k];
             return <AddressLink data={data[k]} idx={k} key={k} />;
           })}
         </div>

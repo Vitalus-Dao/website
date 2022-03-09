@@ -41,7 +41,7 @@ export const JungleClub: FC = () => {
       });
 
     const promises = nfts.map(async (acc) => {
-      const [mtdtAcnt, bump] = await MetadataProgram.findMetadataAccount(acc.mint);
+      const [mtdtAcnt] = await MetadataProgram.findMetadataAccount(acc.mint);
       // console.log(mtdtAcnt);
       try {
         const metadata = await Metadata.load(connection, mtdtAcnt);

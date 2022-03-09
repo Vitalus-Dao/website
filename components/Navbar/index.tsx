@@ -1,7 +1,7 @@
 import { WalletMultiButton } from '@solana/wallet-adapter-react-ui';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
-import { FC, useEffect } from 'react';
+import { FC, useCallback, useEffect } from 'react';
 import { Logo } from '@components/Logo';
 import { NavList } from '@components/NavList';
 
@@ -11,7 +11,7 @@ export const Navbar: FC = () => {
     menu.classList.toggle('hidden');
   }
 
-  const handleScroll = () => {
+  const handleScroll = useCallback(() => {
     if (window.scrollY > 10) {
       document.querySelector('#nav').className =
         'fixed top-0 z-20 w-full border-b-gray-200 py-2 dark:bg-dark-2';
@@ -25,7 +25,8 @@ export const Navbar: FC = () => {
       document.querySelector('#nav').className =
         'fixed top-0 z-20 w-full border-b-gray-200 py-2';
     }
-  };
+  }, []);
+
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
   }, [handleScroll]);

@@ -1,7 +1,7 @@
 import { Page } from '@components/Page';
 import { TeamProfile } from '@components/TeamProfile';
 import Image from 'next/image';
-import { FC, useEffect, useState } from 'react';
+import { FC } from 'react';
 import { Logo } from '@components/Logo';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDiscord, faInstagram, faTwitter } from '@fortawesome/free-brands-svg-icons';
@@ -13,7 +13,6 @@ import { Card } from '@components/Card';
 // import "swiper/css/navigation";
 
 const Home: FC = () => {
-  const [spHeihgt, setSPHeight] = useState(0);
   const villaSize = 450;
 
   return (
