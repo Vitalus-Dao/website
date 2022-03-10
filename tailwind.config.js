@@ -8,15 +8,13 @@ module.exports = {
   ],
   theme: {
     colors: {
+      ...colors,
       transparent: 'transparent',
       current: 'currentColor',
       dark: {
         1: '#1a2323',
         2: '#2f3737'
       },
-      white: colors.white,
-      black: colors.black,
-      green: colors.green,
       primary: '#112121',
       accent: '#b39c4d',
       secondary: '#294936',

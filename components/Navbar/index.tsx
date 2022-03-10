@@ -5,7 +5,7 @@ import { FC, useCallback, useEffect } from 'react';
 import { Logo } from '@components/Logo';
 import { NavList } from '@components/NavList';
 
-export const Navbar: FC = () => {
+export const Navbar: FC<{ splash: boolean }> = ({ splash }) => {
   function doToggleMenu() {
     const menu = document.querySelector('#mobile-menu'); // Menu
     menu.classList.toggle('hidden');
@@ -28,11 +28,19 @@ export const Navbar: FC = () => {
   }, []);
 
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-  }, [handleScroll]);
+    if (splash) {
+      window.addEventListener('scroll', handleScroll);
+    } else {
+      document.querySelector('#nav').className =
+        'w-full border-b-gray-200 py-2 dark:bg-dark-2 mb-4';
+      document.querySelector('#walletBtn').className = 'md:block';
+      document.querySelector('#logo').className =
+        'my-auto md:flex text-slate-900 dark:text-white';
+    }
+  }, [handleScroll, splash]);
 
   return (
-    <nav id="nav" className="fixed top-0 z-50 w-full border-b-gray-200 py-2">
+    <nav id="nav" className="fixed top-0 z-20 w-full border-b-gray-200 py-2">
       <div className="w-full container mx-auto flex flex-wrap justify-between ">
         <div
           id="logo"

@@ -6,26 +6,16 @@ import { Logo } from '@components/Logo';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDiscord, faInstagram, faTwitter } from '@fortawesome/free-brands-svg-icons';
 import { Card } from '@components/Card';
-// import { Swiper, SwiperSlide } from 'swiper/';
-// import { Navigation } from 'swiper';
-
-// import "swiper/css";
-// import "swiper/css/navigation";
 
 const Home: FC = () => {
   const villaSize = 450;
 
   return (
     <div>
-      {/* <SplashPage src="/imgs/splash0.png"> */}
-      <Page>
+      <Page splash={true}>
         <div>
           <section className="">
             <div className="">
-              {/* <div className="absolute w-full">
-                  <Logo />
-                </div> */}
-              {/* <img id="splashPage" src="/imgs/splash1.png" /> */}
               <div
                 style={{
                   backgroundImage: "url('/imgs/splash1.png')",
@@ -39,14 +29,14 @@ const Home: FC = () => {
                     WELCOME TO THE JUNGLE
                   </div>
                 </div>
-                <div className="bg-secondary/50 mt-4 rounded-lg flex space-x-16 px-8 py-3">
+                <div className="bg-secondary/50 mt-4 rounded-lg flex space-x-16 px-12 py-4">
                   <a
                     target="_blank"
                     rel="noreferrer"
                     href="https://twitter.com/VitalusLife">
                     <FontAwesomeIcon
                       icon={faTwitter}
-                      size={'2x'}
+                      size={'3x'}
                       className="text-slate-900 dark:text-white"
                     />
                   </a>
@@ -56,14 +46,14 @@ const Home: FC = () => {
                     href="https://www.instagram.com/vitaluslife/">
                     <FontAwesomeIcon
                       icon={faInstagram}
-                      size={'2x'}
+                      size={'3x'}
                       className="text-slate-900 dark:text-white"
                     />
                   </a>
                   <a target="_blank" rel="noreferrer" href="https://t.co/rq760C14KB">
                     <FontAwesomeIcon
                       icon={faDiscord}
-                      size={'2x'}
+                      size={'3x'}
                       className="text-slate-900 dark:text-white"
                     />
                   </a>
@@ -77,9 +67,6 @@ const Home: FC = () => {
                 <div className="mx-8 flex flex-col justify-center">
                   <div className="text-center mt-4">
                     <div className="text-2xl font-bold">This is Vitalus</div>
-                    {/* <div className="text-lg font-semibold tracking-widest">
-                        Welcome to the Jungle
-                      </div> */}
                   </div>
                   <div className="text-lg my-4 grow">
                     <div className="">
@@ -105,98 +92,47 @@ const Home: FC = () => {
               </div>
             </div>
           </section>
-          {/* <div className="flex justify-center space-x-24 mt-24">
-              <div className="dark:bg-green-900 flex justify-around">
-                <div className="text-md my-4 mx-6">
-                  <div className="font-semibold text-lg">
-                    We will strive to accumulate Vitalus' social capital through:
-                  </div>
-                  <ul className="mt-2">
-                    <li>- Poker Nights </li>
-                    <li>- Online Networking Events </li>
-                    <li>- Alpha Channel for Vitalians to explore NFT/ crypto world </li>
-                    <li>
-                      - Vitalian-Support-Vitalian (Channels to show support to fellow
-                      Vitalians in any matters){' '}
-                    </li>
-                    <li>- Bonus rewards for active engagement & contributions </li>
-                    <li>- Partnership with NFT OGs or Celebrities </li>
-                  </ul>
+          <section className="bg-secondary py-12 flex flex-col justify-center">
+            <div className="container mx-auto flex flex-col">
+              <div className="flex justify-evenly items-center text-4xl">
+                <div>VITALUS</div>
+                <div className="flex flex-col justify-center">
+                  <div className="mx-auto">600</div>
+                  <div>NEIGHBORS</div>
+                </div>
+                <div className="flex flex-col justify-center">
+                  <div className="mx-auto">4</div>
+                  <div>DISTRICTS</div>
+                </div>
+                <div className="flex flex-col justify-center">
+                  <div className="mx-auto">40</div>
+                  <div>STREETS</div>
                 </div>
               </div>
-              <div className="flex items-center">
-                <Image src="/imgs/panther-logo.png" width={200} height={200} />
-              </div>
-            </div> */}
-          <section className="bg-accent  py-12 flex flex-col justify-center text-black">
-            <div className="flex flex-col mx-auto container">
-              <div className="text-center font-bold text-3xl mb-4">About MetaVillage</div>
-              <div className="flex flex-col">
-                <div className="text-md">
-                  <div className="flex flex-col space-y-2 mx-4 justify-center">
-                    <div>
-                      Metavillage gives you a high-fidelity way to express your digital
-                      identity through the
-                      <span className="font-semibold"> Villa Page</span>. It will allow
-                      you to convey their digital persona, a way to broadcast yourself --
-                      your interests, your hobbies -- to anyone willing to listen. This
-                      will enable Villagers to interact on a deeper level than just
-                      nicknames and singular PFPs.
-                    </div>
-                    <div>
-                      The Villa Page will provide a worldwide connection to not only those
-                      with common interest, but anyone looking to get to know you. It will
-                      allow Villagers to connect to find various things: job
-                      opportunities, assistance/advice, potential customers, your new best
-                      friend, etc.. Your Villa Page will enable you to show the world who
-                      you are truly are and find others of the same creed.
-                    </div>
-                  </div>
-                  <div className="mt-8 flex justify-center flex-wrap text-lg">
-                    <div>
-                      <div className="">
-                        Learn more about Metavillage and Villa Pages by reading the
-                        <a
-                          href="https://whitepaper.metavillage.app/"
-                          target="_blank"
-                          rel="norefferer">
-                          whitepaper
-                        </a>
-                      </div>
-                      {/* <ul className="mt-2">
-                          <li>- Display your NFT collection in your Villa Art Gallery</li>
-                          <li>
-                            - Link to your Metaverse homes. Let people jump in your Sandbox,
-                            Decentraland, Portal, and other homes
-                          </li>
-                          <li>- Sign one another’s Villa Guestbooks</li>
-                          <li>- Customize with fun themes, colors, fonts, and details</li>
-                          <li>
-                            - Showcase your social links and embeds: (Twitter, Discord,
-                            Spotify, Twitch, etc.)
-                          </li>
-                        </ul> */}
-                    </div>
-                  </div>
+              <a
+                href="https://magiceden.io/marketplace/metavillage"
+                target="_blank"
+                rel="noreferrer"
+                className="bg-accent rounded-full mt-12 mx-auto px-12 py-4 text-2xl">
+                Join Us and Move in to a Beuatiful Villa
+              </a>
+              <div className="flex space-x-12 mt-16 mx-auto">
+                <div className="flex items-center">
+                  <Image src="/imgs/villa2.jpeg" width={300} height={300} />
                 </div>
-                <div className="flex space-x-4 mt-8 mx-auto">
-                  <div className="flex items-center">
-                    <Image src="/imgs/villa2.jpeg" width={200} height={200} />
-                  </div>
-                  <div className="flex items-center">
-                    <Image src="/imgs/villa1.jpeg" width={200} height={200} />
-                  </div>
-                  <div className="flex items-center">
-                    <Image src="/imgs/villa2.jpeg" width={200} height={200} />
-                  </div>
-                  <div className="flex items-center">
-                    <Image src="/imgs/villa1.jpeg" width={200} height={200} />
-                  </div>
+                <div className="flex items-center">
+                  <Image src="/imgs/villa1.jpeg" width={300} height={300} />
+                </div>
+                <div className="flex items-center">
+                  <Image src="/imgs/villa2.jpeg" width={300} height={300} />
+                </div>
+                <div className="flex items-center">
+                  <Image src="/imgs/villa1.jpeg" width={300} height={300} />
                 </div>
               </div>
             </div>
           </section>
-          <section className="bg-secondary  py-12 flex justify-center">
+          <section className="bg-accent  py-12 flex justify-center">
             <div className="">
               <div className="mx-auto container font-bold text-2xl">
                 Highlighted Features of Vitalus
@@ -247,6 +183,49 @@ const Home: FC = () => {
                 </div> */}
             </div>
           </section>
+          <section className="bg-secondary py-12 flex flex-col justify-center text-white">
+            <div className="flex flex-col mx-auto container lg:max-w-screen-xl">
+              <div className="text-center font-bold text-3xl mb-4">About MetaVillage</div>
+              <div className="flex flex-col">
+                <div className="text-md">
+                  <div className="flex flex-col space-y-2 mx-4 justify-center">
+                    <div>
+                      Metavillage gives you a high-fidelity way to express your digital
+                      identity through the
+                      <span className="font-semibold"> Villa Page</span>. It will allow
+                      you to convey their digital persona, a way to broadcast yourself --
+                      your interests, your hobbies -- to anyone willing to listen. This
+                      will enable Villagers to interact on a deeper level than just
+                      nicknames and singular PFPs.
+                    </div>
+                    <div>
+                      The Villa Page will provide a worldwide connection to not only those
+                      with common interest, but anyone looking to get to know you. It will
+                      allow Villagers to connect to find various things: job
+                      opportunities, assistance/advice, potential customers, your new best
+                      friend, etc.. Your Villa Page will enable you to show the world who
+                      you are truly are and find others of the same creed.
+                    </div>
+                  </div>
+                  <div className="mt-8 flex justify-center flex-wrap text-lg">
+                    <div>
+                      <div className="">
+                        Learn more about Metavillage and Villa Pages by reading the
+                        <a
+                          href="https://whitepaper.metavillage.app/"
+                          target="_blank"
+                          rel="norefferer"
+                          className="font-bold hover:underline pl-1">
+                          whitepaper
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section></section>
           <section className=" pt-12 flex justify-center">
             <div className="container mx-8">
               <div className="text-center font-bold text-2xl">Vitalus Contributors</div>
@@ -286,13 +265,11 @@ const Home: FC = () => {
                   role="Media Mod"
                   imgSrc="/imgs/profiles/wetiko.png"
                 />
-                {/* <TeamProfile name="mf777" role="Developer" imgSrc="/imgs/missing.jpg" /> */}
               </div>
             </div>
           </section>
         </div>
       </Page>
-      {/* </SplashPage> */}
     </div>
   );
 };

@@ -54,7 +54,7 @@ const AddressShell: FC<{ data: VillaData }> = ({ data }) => {
   // const router = useRouter();
 
   return (
-    <Page>
+    <Page splash={false}>
       <Address data={data} />
     </Page>
   );

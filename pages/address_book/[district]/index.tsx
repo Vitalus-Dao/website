@@ -36,7 +36,7 @@ const District = ({ data }) => {
   const router = useRouter();
 
   return (
-    <Page>
+    <Page splash={false}>
       <div className="container mx-auto">
         <div className="mt-4 ml-2 font-bold text-xl">
           {titlize(router.query.district as string)}
@@ -46,7 +46,7 @@ const District = ({ data }) => {
             return (
               /* <Link href={`/address_book/${router.query.district}/${block}`} key={block}> */
               <a href={`/address_book/${router.query.district}/${block}`} key={block}>
-                <div className="ml-2 p-2 hover:bg-gray-100 dark:hover:bg-gray-800">
+                <div className="ml-2 p-2 hover:bg-gray-100 dark:hover:bg-accent/25">
                   {titlize(block)}
                 </div>
               </a>

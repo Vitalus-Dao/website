@@ -41,7 +41,7 @@ const Block = ({ data }): JSX.Element => {
   const router = useRouter();
 
   return (
-    <Page>
+    <Page splash={false}>
       <div className="container mx-auto">
         <div className="mt-4 ml-2 font-bold text-xl">
           {titlize(router.query.block as string)}
