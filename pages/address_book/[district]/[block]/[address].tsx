@@ -11,7 +11,7 @@ export const getStaticPaths = async () => {
 
   Object.keys(metadata).forEach((district) => {
     Object.keys(metadata[district]).forEach((block) => {
-      Object.keys(metadata[district][block]).forEach((num, idx) => {
+      Object.keys(metadata[district][block]).forEach((num) => {
         // let i = addr.metadata.name.indexOf(" ");
         paths.push({
           params: {
@@ -54,7 +54,7 @@ const AddressShell: FC<{ data: VillaData }> = ({ data }) => {
   // const router = useRouter();
 
   return (
-    <Page>
+    <Page splash={false}>
       <Address data={data} />
     </Page>
   );

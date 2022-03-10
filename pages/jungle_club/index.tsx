@@ -4,7 +4,7 @@ import { Page } from '@components/Page';
 
 const JungleClubShell: FC = () => {
   return (
-    <Page>
+    <Page splash={false}>
       <JungleClub />
     </Page>
   );

@@ -41,7 +41,7 @@ export const JungleClub: FC = () => {
       });
 
     const promises = nfts.map(async (acc) => {
-      const [mtdtAcnt, bump] = await MetadataProgram.findMetadataAccount(acc.mint);
+      const [mtdtAcnt] = await MetadataProgram.findMetadataAccount(acc.mint);
       // console.log(mtdtAcnt);
       try {
         const metadata = await Metadata.load(connection, mtdtAcnt);
@@ -77,17 +77,13 @@ export const JungleClub: FC = () => {
 
   return (
     <div>
-      <div className="font-bold text-xl">
-        This page is currently under construction!
-      </div>
+      <div className="font-bold text-xl">This page is currently under construction!</div>
       {!publicKey && <div>Please connect wallet</div>}
       {publicKey && !villas[0] && (
         <div>Seems that you do not have a Vitalus villa :/</div>
       )}
       {publicKey && villas[0] && (
-        <div>
-          Here you will see private info only for Vitalus holders
-        </div>
+        <div>Here you will see private info only for Vitalus holders</div>
       )}
     </div>
   );

@@ -1,27 +1,57 @@
 import { WalletMultiButton } from '@solana/wallet-adapter-react-ui';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
-import { FC } from 'react';
-import {Logo} from "@components/Logo";
+import { FC, useCallback, useEffect } from 'react';
+import { Logo } from '@components/Logo';
 import { NavList } from '@components/NavList';
 
-export const Navbar: FC = () => {
+export const Navbar: FC<{ splash: boolean }> = ({ splash }) => {
   function doToggleMenu() {
     const menu = document.querySelector('#mobile-menu'); // Menu
     menu.classList.toggle('hidden');
   }
 
+  const handleScroll = useCallback(() => {
+    if (window.scrollY > 10) {
+      document.querySelector('#nav').className =
+        'fixed top-0 z-20 w-full border-b-gray-200 py-2 dark:bg-dark-2';
+      document.querySelector('#walletBtn').className = 'md:block';
+      document.querySelector('#logo').className =
+        'my-auto md:flex text-slate-900 dark:text-white';
+    } else {
+      document.querySelector('#logo').className =
+        'invisible my-auto md:flex text-slate-900 dark:text-white';
+      document.querySelector('#walletBtn').className = 'invisible';
+      document.querySelector('#nav').className =
+        'fixed top-0 z-20 w-full border-b-gray-200 py-2';
+    }
+  }, []);
+
+  useEffect(() => {
+    if (splash) {
+      window.addEventListener('scroll', handleScroll);
+    } else {
+      document.querySelector('#nav').className =
+        'w-full border-b-gray-200 py-2 dark:bg-dark-2 mb-4';
+      document.querySelector('#walletBtn').className = 'md:block';
+      document.querySelector('#logo').className =
+        'my-auto md:flex text-slate-900 dark:text-white';
+    }
+  }, [handleScroll, splash]);
+
   return (
-    <nav className="border-b-gray-200 py-1.5 md:m-4 rounded bg-white dark:bg-green-900">
-      <div className="flex flex-wrap justify-between ">
-        <div className="my-auto md:flex text-slate-900 dark:text-white">
+    <nav id="nav" className="fixed top-0 z-20 w-full border-b-gray-200 py-2">
+      <div className="w-full container mx-auto flex flex-wrap justify-between ">
+        <div
+          id="logo"
+          className="invisible my-auto md:flex text-slate-900 dark:text-white">
           {/* <Link href="/"> */}
           <a href="/" className="ml-2 font-mono text-2xl">
-            <Logo />
+            <Logo height={30} />
           </a>
         </div>
         <div className="flex pr-2 space-x-4">
-          <div className="hidden md:block">
+          <div id="walletBtn" className="invisible md:block">
             <WalletMultiButton className="!bg-green-700" />
           </div>
           <button
@@ -35,7 +65,9 @@ export const Navbar: FC = () => {
             <FontAwesomeIcon icon={faBars} size={'2x'} />
           </button>
         </div>
-        <div className="text-slate-900 dark:text-white justify-between w-full hidden" id="mobile-menu">
+        <div
+          className="text-slate-900 dark:text-white justify-between w-full hidden"
+          id="mobile-menu">
           <NavList row={false} />
         </div>
       </div>

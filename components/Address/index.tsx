@@ -1,5 +1,5 @@
 import { web3 } from '@project-serum/anchor';
-import { useConnection, useWallet } from '@solana/wallet-adapter-react';
+import { useConnection } from '@solana/wallet-adapter-react';
 import Image from 'next/image';
 import { useState, useEffect, FC } from 'react';
 import { VillaData } from '@types';
@@ -10,7 +10,7 @@ export const Address: FC<{ data: VillaData }> = ({ data }) => {
   const { connection } = useConnection();
   const [imgSrc, setImgSrc] = useState('/imgs/missing.jpg');
   const [owner, setOwner] = useState('');
-  const { publicKey } = useWallet();
+  // const { publicKey } = useWallet();
 
   const getVillaOwner = async () => {
     const mint = new web3.PublicKey(data.mint);

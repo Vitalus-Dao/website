@@ -22,6 +22,18 @@
   },
   "plugins": ["react", "@typescript-eslint", "prettier"],
   "rules": {
+    "prettier/prettier": [
+      "error",
+      {
+        "endOfLine": "auto",
+        "singleQuote": true,
+        "bracketSameLine": true,
+        "printWidth": 90,
+        "arrow-body-style": [
+          "error", "as-needed"
+        ]
+      }
+    ],
     "react/react-in-jsx-scope": "off",
     "react/jsx-props-no-spreading": "off",
     "react/forbid-prop-types": "off",
