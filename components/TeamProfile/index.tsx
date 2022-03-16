@@ -1,6 +1,11 @@
 import { FC } from 'react';
-import { ProfileArgs } from '@types';
 import Image from 'next/image';
+
+export interface ProfileArgs {
+  name: string,
+  imgSrc: string,
+  role: string,
+};
 
 export const TeamProfile: FC<ProfileArgs> = ({ imgSrc, name, role }) => {
   const scale = 100;

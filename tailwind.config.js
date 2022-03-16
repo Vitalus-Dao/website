@@ -16,7 +16,10 @@ module.exports = {
         2: '#2f3737'
       },
       primary: '#112121',
-      accent: '#b39c4d',
+      accent: {
+        1: '#a8914a',
+        2: '#8e7a3e',
+      },
       secondary: '#294936',
     },
     extend: {},

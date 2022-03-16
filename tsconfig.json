@@ -22,6 +22,8 @@
     "paths": {
       "@components/*": ["components/*"],
       "@helpers/*": ["helpers/*"],
+      "@instructions": ["instructions/index.ts"],
+      "@idls/*": ["idls/*"],
       "@types": ["types/index.ts"]
     }
   },

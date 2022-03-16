@@ -113,7 +113,7 @@ const Home: FC = () => {
                 href="https://magiceden.io/marketplace/metavillage"
                 target="_blank"
                 rel="noreferrer"
-                className="bg-accent rounded-full mt-12 mx-auto px-12 py-4 text-2xl">
+                className="bg-accent-1 rounded-full mt-12 mx-auto px-12 py-4 text-2xl hover:bg-accent-2">
                 Join Us and Move in to a Beuatiful Villa
               </a>
               <div className="flex space-x-12 mt-16 mx-auto">
@@ -132,7 +132,7 @@ const Home: FC = () => {
               </div>
             </div>
           </section>
-          <section className="bg-accent  py-12 flex justify-center">
+          <section className="bg-accent-1  py-12 flex justify-center">
             <div className="">
               <div className="mx-auto container font-bold text-2xl">
                 Highlighted Features of Vitalus
@@ -147,10 +147,10 @@ const Home: FC = () => {
               {/* <div className="mt-2">
                   <div className="font-bold text-lg">Vitalus Jungle Club</div>
                   This will be an exclusive club for our beloved Vitalians! Here you 
-                  will be  able to stay up to dateand gain access to everything that is happening in Vitalus.
+                  will be  able to stay up to date and gain access to everything that is happening in Vitalus.
                   This will include things like partnerships, special events, and anything else 
                   our community decides to take on. This will be a major source of value for the 
-                  Vitalus community!
+                  Vitalus accent-1!
                 </div>
                 <div className="mt-2">
                   <div className="font-bold text-lg">Vitalus DAO</div>
@@ -163,7 +163,7 @@ const Home: FC = () => {
                   <div className="mt-1">
                     Any and all activities the DAO takes on, as well as any funds that it controls will be made public!
                     The community will ALWAYS know exactly what assets the DAO holds, and the trading of these assets will 
-                    only be able to happne through vote.
+                    only be able to happen through vote.
                   </div>
                 </div>
                 <div className="mt-2">
